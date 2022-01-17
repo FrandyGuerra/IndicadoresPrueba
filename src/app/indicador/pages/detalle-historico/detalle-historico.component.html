@@ -1,0 +1,36 @@
+<button class="btn btn-primary"(click)="goBack()">Volver</button>
+<h1 class="text-center">{{idIndicador |uppercase}}</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            HISTORICO
+            <table class="table mt-3" id="tb">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Valor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let serie of series; let i = index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{serie.fecha | date: 'dd/MM/yyyy'}}</td>
+                    <td>{{serie.valor}}</td>
+                  </tr>
+                
+                </tbody>
+              </table>
+        </div>
+        <div class="col md-6">
+            <h2>{{prueba2.nombre}}</h2>
+            <p>{{prueba2.unidad_medida}}</p>
+            <p>{{dataServices.nombreIndicador}}</p>
+            <button class="btn btn-primary" (click)="hacerGrafica()">Ver Gráfico Historico</button>
+            <div>
+              <canvas width="400px" height="400px" #newCanvas></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+

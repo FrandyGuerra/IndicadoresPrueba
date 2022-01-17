@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Indicadores diarios</h1>
+        <div class="row">
+         <div *ngFor="let p of prueba" class="col-md-12 col-lg-6">
+            <ul  class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center mb-3">
+                    <div>
+                        <h2 class="text-secondary fw-bold">{{p.codigo| uppercase}}-{{p.fecha | date: 'dd/MM/yyyy'}} </h2>
+                        <br><br>
+                        <h1>{{p.valor |number}}-<span class="text-primary">({{p.unidad_medida}})</span></h1>
+                    </div>  
+                    
+                    
+                    <div>
+                        <a [routerLink]="['/detalleHistorico',p.codigo]">
+                        <i class="info fas fa-info-circle text-primary p-3 fs-2"></i><i class="fs-2 text-secondary fas fa-angle-right"></i></a>
+                    </div>
+                    
+                </li>
+            </ul>
+
+            </div>
+        </div>   
+</div>
+  
+
